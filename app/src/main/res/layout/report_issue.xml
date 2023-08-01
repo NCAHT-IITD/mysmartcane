@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ReportIssue" >
+
+    <!-- on below line we are creating a text for heading of our app -->
+    <TextView
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/ic_back_arrow"
+        android:contentDescription="go back"
+        android:onClick="goBackPressed"
+        android:textColor="#00000000" />
+
+    <TextView
+        android:id="@+id/idTVHeading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/idLanguageSpinner"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:padding="4dp"
+        android:text="REPORT GRIEVANCE"
+        android:textAlignment="center"
+
+        android:textSize="20dp" />
+
+    <!-- on below line we are creating a spinner -->
+
+    <Spinner
+        android:id="@+id/idLanguageSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="40dp"
+        android:padding="60dp"
+        />
+
+    <Button
+        android:id="@+id/Submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="540dp"
+        android:layout_marginEnd="20dp"
+        android:text="SUBMIT"
+        android:textColor="@color/black"
+        android:backgroundTint="#E8D5C9"
+        android:textSize="18dp"/>
+
+
+</RelativeLayout>

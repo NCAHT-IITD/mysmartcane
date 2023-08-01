@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppCompatAlertDialogStyle">alert</style>
+
+    <style name="Theme_D1NoTitleDim">themed1</style>
+
+    <style name="ThemeOverlay_Material_Light">light</style>
+</resources>

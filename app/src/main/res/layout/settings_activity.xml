@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10sp">
+
+
+    <TextView
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/ic_back_arrow"
+        android:contentDescription="go back"
+        android:onClick="goBackPressed"
+        android:textColor="#00000000" />
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10sp"
+        android:text="SETTINGS"
+        android:textAlignment="center"
+
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="111dp"
+        android:layout_margin="20dp"
+        android:clickable="true"
+        android:padding="@dimen/cardview_default_elevation"
+        app:cardBackgroundColor="#EBE2E2"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp">
+
+        <Button
+            android:id="@+id/settings1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTint="#EBE2E2"
+            android:text="PROFILE"
+            android:textSize="18dp"
+            android:textColor="@color/black"/>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="111dp"
+        android:layout_margin="20dp"
+        android:clickable="true"
+        android:padding="@dimen/cardview_default_elevation"
+        app:cardBackgroundColor="#E8D5C9"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp">
+
+        <Button
+            android:id="@+id/settings2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTint="#E8D5C9"
+            android:text="INTENSITY"
+            android:textSize="18dp"
+            android:textColor="@color/black"/>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
