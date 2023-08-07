@@ -26,7 +26,9 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="10dp"
-        android:hint="Name" />
+        android:hint="Name"
+
+        />
 
     <EditText
         android:id="@+id/idEdtMessage0"
@@ -35,7 +37,8 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="10dp"
-        android:hint="Serial Number" />
+        android:hint="Serial Number"
+       />
     <EditText
         android:id="@+id/idEdtMessage1"
         android:layout_width="match_parent"
@@ -43,7 +46,8 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="10dp"
-        android:hint="Email-Id" />
+        android:hint="Email-Id"
+       />
     <EditText
         android:id="@+id/idEdtMessage2"
         android:layout_width="match_parent"
@@ -51,7 +55,8 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="10dp"
-        android:hint="Mobile Number" />
+        android:hint="Mobile Number"
+        />
 
     <!--button for saving data-->
     <Button
@@ -63,7 +68,8 @@
         android:layout_marginEnd="10dp"
         android:text="SUBMIT"
         android:textColor="@color/black"
-        android:backgroundTint="#E8D5C9"/>
+        android:backgroundTint="#E8D5C9"
+        android:contentDescription="submit"/>
 
 
 </LinearLayout>

@@ -26,6 +26,7 @@
         android:layout_weight="1"
         android:text="SMARTCANE-BATTERY"
         android:textAlignment="center"
+        android:contentDescription="smartcane battery"
 
         android:textSize="20dp"
          />

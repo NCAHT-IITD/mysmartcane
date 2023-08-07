@@ -52,7 +52,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
 
-                    android:clickable="true"
+
                     android:padding="@dimen/cardview_default_elevation"
                     app:cardBackgroundColor="#E8D5C9"
                     app:cardCornerRadius="20dp"
@@ -68,7 +68,8 @@
                         android:text=" SOUND MODE"
                         android:textAlignment="center"
                         android:textColor="@color/black"
-                        android:textSize="16dp" />
+                        android:textSize="16dp"
+                        android:contentDescription="sound mode"/>
 
 
                 </androidx.cardview.widget.CardView>
@@ -78,7 +79,8 @@
                     android:layout_width="51dp"
                     android:layout_height="40dp"
 
-                    android:pointerIcon="arrow" />
+                    android:pointerIcon="arrow"
+                    android:contentDescription="select"/>
             </LinearLayout>
 
             <LinearLayout
@@ -93,7 +95,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
 
-                    android:clickable="true"
+
                     android:padding="@dimen/cardview_default_elevation"
                     app:cardBackgroundColor="#EBE2E2"
                     app:cardCornerRadius="20dp"
@@ -109,7 +111,8 @@
                         android:text="PROFILE MODE"
                         android:textAlignment="center"
                         android:textColor="@color/black"
-                        android:textSize="16dp" />
+                        android:textSize="16dp"
+                        android:contentDescription="profile mode"/>
 
 
                 </androidx.cardview.widget.CardView>
@@ -119,7 +122,7 @@
                     android:id="@+id/spnDistanceOutputPattern"
                     android:layout_width="51dp"
                     android:layout_height="40dp"
-
+                    android:contentDescription="select"
                     android:pointerIcon="arrow" />
             </LinearLayout>
 
@@ -134,7 +137,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
 
-                    android:clickable="true"
+
                     android:padding="@dimen/cardview_default_elevation"
                     app:cardBackgroundColor="#E8D5C9"
                     app:cardCornerRadius="20dp"
@@ -150,7 +153,8 @@
                         android:text="MODE: ZONE1"
                         android:textAlignment="center"
                         android:textColor="@color/black"
-                        android:textSize="16dp" />
+                        android:textSize="16dp"
+                        android:contentDescription="mode zone 1"/>
 
 
                 </androidx.cardview.widget.CardView>
@@ -161,7 +165,7 @@
                     android:id="@+id/spnDistanceZone1Pattern"
                     android:layout_width="51dp"
                     android:layout_height="40dp"
-
+                    android:contentDescription="select"
                     android:pointerIcon="arrow" />
             </LinearLayout>
 
@@ -174,7 +178,7 @@
                     android:layout_width="102dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:clickable="true"
+
                     android:padding="@dimen/cardview_default_elevation"
                     app:cardBackgroundColor="#EBE2E2"
                     app:cardCornerRadius="20dp"
@@ -189,7 +193,8 @@
                         android:text="MODE: ZONE2"
                         android:textAlignment="center"
                         android:textColor="@color/black"
-                        android:textSize="16dp" />
+                        android:textSize="16dp"
+                        android:contentDescription="mode zone 2"/>
 
 
                 </androidx.cardview.widget.CardView>
@@ -199,7 +204,7 @@
                     android:id="@+id/spnDistanceZone2Pattern"
                     android:layout_width="51dp"
                     android:layout_height="40dp"
-
+                    android:contentDescription="select"
                     android:pointerIcon="arrow" />
 
             </LinearLayout>
@@ -213,7 +218,7 @@
                     android:layout_width="102dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:clickable="true"
+
                     android:padding="@dimen/cardview_default_elevation"
                     app:cardBackgroundColor="#E8D5C9"
                     app:cardCornerRadius="20dp"
@@ -228,13 +233,15 @@
                         android:text="MODE: ZONE3"
                         android:textAlignment="center"
                         android:textColor="@color/black"
-                        android:textSize="16dp" />
+                        android:textSize="16dp"
+                        android:contentDescription="mode zone 3"/>
                 </androidx.cardview.widget.CardView>
                 <Spinner
                     android:id="@+id/spnDistanceZone3Pattern"
                     android:layout_width="51dp"
                     android:layout_height="40dp"
-                    android:pointerIcon="arrow" />
+                    android:pointerIcon="arrow"
+                    android:contentDescription="select"/>
 
 
             </LinearLayout>
@@ -248,7 +255,7 @@
                     android:layout_width="102dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:clickable="true"
+
                     android:padding="@dimen/cardview_default_elevation"
                     app:cardBackgroundColor="#EBE2E2"
                     app:cardCornerRadius="20dp"
@@ -263,7 +270,8 @@
                         android:text="MODE: ZONE4"
                         android:textAlignment="center"
                         android:textColor="@color/black"
-                        android:textSize="16dp" />
+                        android:textSize="16dp"
+                        android:contentDescription="mode zone 4"/>
 
 
                 </androidx.cardview.widget.CardView>
@@ -273,7 +281,8 @@
                     android:id="@+id/spnDistanceZone4Pattern"
                     android:layout_width="51dp"
                     android:layout_height="40dp"
-                    android:pointerIcon="arrow" />
+                    android:pointerIcon="arrow"
+                    android:contentDescription="select"/>
 
 
             </LinearLayout>
@@ -296,7 +305,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
 
-                    android:clickable="true"
+
                     android:padding="@dimen/cardview_default_elevation"
                     app:cardBackgroundColor="#E8D5C9"
                     app:cardCornerRadius="20dp"
@@ -312,7 +321,8 @@
                         android:text="SOUND MODE:    NAVIGATE"
                         android:textAlignment="center"
                         android:textColor="@color/black"
-                        android:textSize="16dp" />
+                        android:textSize="16dp"
+                        android:contentDescription="sound mode navigate"/>
 
 
                 </androidx.cardview.widget.CardView>
@@ -323,7 +333,8 @@
                     android:id="@+id/spnNaviOutputType"
                     android:layout_width="51dp"
                     android:layout_height="40dp"
-                    android:pointerIcon="arrow"/>
+                    android:pointerIcon="arrow"
+                    android:contentDescription="select"/>
             </LinearLayout>
 
             <LinearLayout
@@ -337,7 +348,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
 
-                    android:clickable="true"
+
                     android:padding="@dimen/cardview_default_elevation"
                     app:cardBackgroundColor="#EBE2E2"
                     app:cardCornerRadius="20dp"
@@ -353,7 +364,8 @@
                         android:text="PROFILE MODE: NAVIGATE"
                         android:textAlignment="center"
                         android:textColor="@color/black"
-                        android:textSize="16dp" />
+                        android:textSize="16dp"
+                        android:contentDescription="profile mode navigate"/>
 
 
                 </androidx.cardview.widget.CardView>
@@ -364,7 +376,8 @@
                     android:id="@+id/spnNaviOutputPattern"
                     android:layout_width="51dp"
                     android:layout_height="40dp"
-                    android:pointerIcon="arrow" />
+                    android:pointerIcon="arrow"
+                    android:contentDescription="select"/>
             </LinearLayout>
 
             <LinearLayout
@@ -377,7 +390,7 @@
                     android:layout_width="120dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:clickable="true"
+
                     android:padding="@dimen/cardview_default_elevation"
                     app:cardBackgroundColor="#E8D5C9"
                     app:cardCornerRadius="20dp"
@@ -392,7 +405,8 @@
 
                         android:text="FORWARD"
                         android:textColor="@color/black"
-                        android:textSize="16dp" />
+                        android:textSize="16dp"
+                        android:contentDescription="forward"/>
 
 
                 </androidx.cardview.widget.CardView>
@@ -404,7 +418,8 @@
                     android:id="@+id/spnNaviFwdPattern"
                     android:layout_width="51dp"
                     android:layout_height="40dp"
-                    android:pointerIcon="arrow"/>
+                    android:pointerIcon="arrow"
+                    android:contentDescription="select"/>
             </LinearLayout>
 
             <LinearLayout
@@ -418,7 +433,7 @@
                     android:layout_width="120dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:clickable="true"
+
                     android:padding="@dimen/cardview_default_elevation"
                     app:cardBackgroundColor="#EBE2E2"
                     app:cardCornerRadius="20dp"
@@ -432,7 +447,8 @@
                         android:gravity="center"
                         android:text="STOP"
                         android:textColor="@color/black"
-                        android:textSize="16dp" />
+                        android:textSize="16dp"
+                        android:contentDescription="stop"/>
 
 
                 </androidx.cardview.widget.CardView>
@@ -443,7 +459,8 @@
                     android:id="@+id/spnNaviStopPattern"
                     android:layout_width="51dp"
                     android:layout_height="40dp"
-                    android:pointerIcon="arrow" />
+                    android:pointerIcon="arrow"
+                    android:contentDescription="select"/>
 
             </LinearLayout>
 
@@ -458,7 +475,7 @@
                     android:layout_width="120dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:clickable="true"
+
                     android:padding="@dimen/cardview_default_elevation"
                     app:cardBackgroundColor="#E8D5C9"
                     app:cardCornerRadius="20dp"
@@ -472,7 +489,8 @@
                         android:gravity="center"
                         android:text="LEFT"
                         android:textColor="@color/black"
-                        android:textSize="16dp" />
+                        android:textSize="16dp"
+                        android:contentDescription="left"/>
 
 
                 </androidx.cardview.widget.CardView>
@@ -483,7 +501,8 @@
                     android:id="@+id/spnNaviLeftPattern"
                     android:layout_width="51dp"
                     android:layout_height="40dp"
-                    android:pointerIcon="arrow" />
+                    android:pointerIcon="arrow"
+                    android:contentDescription="select"/>
 
             </LinearLayout>
 
@@ -499,7 +518,7 @@
                     android:layout_width="120dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:clickable="true"
+
                     android:padding="@dimen/cardview_default_elevation"
                     app:cardBackgroundColor="#EBE2E2"
                     app:cardCornerRadius="20dp"
@@ -514,7 +533,8 @@
                         android:gravity="center"
                         android:text="RIGHT"
                         android:textColor="@color/black"
-                        android:textSize="16dp" />
+                        android:textSize="16dp"
+                        android:contentDescription="right"/>
 
 
                 </androidx.cardview.widget.CardView>
@@ -524,7 +544,8 @@
                     android:id="@+id/spnNaviRightPattern"
                     android:layout_width="51dp"
                     android:layout_height="40dp"
-                    android:pointerIcon="arrow" />
+                    android:pointerIcon="arrow"
+                    android:contentDescription="select"/>
 
             </LinearLayout>
 
@@ -534,7 +555,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
 
-                android:clickable="true"
+
                 android:padding="@dimen/cardview_default_elevation"
                 app:cardBackgroundColor="#D0E8F1"
                 app:cardCornerRadius="20dp"
@@ -550,7 +571,8 @@
                     android:text="SAVE "
                     android:textColor="@color/black"
 
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:contentDescription="save"/>
             </androidx.cardview.widget.CardView>
         </LinearLayout>
     </ScrollView>

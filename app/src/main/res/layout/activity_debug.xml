@@ -27,7 +27,8 @@
         android:text="DEBUG"
         android:textAlignment="center"
         android:textSize="20dp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:contentDescription="debug"/>
 
 
     <androidx.cardview.widget.CardView
@@ -61,7 +62,8 @@
                     android:textAlignment="textStart"
                     android:textColor="@color/black"
                     android:textSize="18dp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:contentDescription="Distance"/>
 
                 <TextView
                     android:id="@+id/txtDistanceValue"
@@ -90,7 +92,8 @@
                     android:textAlignment="textStart"
                     android:textColor="@color/black"
                     android:textSize="18dp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:contentDescription="sound mode"/>
 
                 <TextView
                     android:id="@+id/txtCurrentTypeValue"
@@ -118,7 +121,8 @@
                     android:textAlignment="textStart"
                     android:textColor="@color/black"
                     android:textSize="18dp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:contentDescription="zone"/>
 
                 <TextView
                     android:id="@+id/txtDistanceZoneValue"
@@ -148,7 +152,8 @@
                     android:textAlignment="textStart"
                     android:textColor="@color/black"
                     android:textSize="18dp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:contentDescription="profile mode"/>
 
                 <TextView
                     android:id="@+id/txtCurrentPatternValue"
@@ -195,7 +200,8 @@
                     android:textAlignment="textStart"
                     android:textColor="@color/black"
                     android:textSize="18dp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:contentDescription="sound mode navigation"/>
 
                 <TextView
                     android:id="@+id/txtNavTypeValue"
@@ -222,7 +228,8 @@
                     android:textAlignment="textStart"
                     android:textColor="@color/black"
                     android:textSize="18dp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:contentDescription="profile mode navigation"/>
 
                 <TextView
                     android:id="@+id/txtNavigationValue"
@@ -249,7 +256,8 @@
                     android:textAlignment="textStart"
                     android:textColor="@color/black"
                     android:textSize="18dp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:contentDescription="navigation"/>
 
                 <TextView
                     android:id="@+id/txtNavPatternValue"
@@ -296,7 +304,8 @@
                     android:textAlignment="textStart"
                     android:textColor="@color/black"
                     android:textSize="18dp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:contentDescription="battery"/>
 
                 <TextView
                     android:id="@+id/txtBatteryValue"
@@ -323,7 +332,8 @@
                     android:textAlignment="textStart"
                     android:textColor="@color/black"
                     android:textSize="18dp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:contentDescription="mode"/>
 
                 <TextView
                     android:id="@+id/txtModeValue"
@@ -350,7 +360,8 @@
                     android:textAlignment="textStart"
                     android:textColor="@color/black"
                     android:textSize="18dp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:contentDescription="mute"/>
 
                 <TextView
                     android:id="@+id/txtMuteValue"
@@ -377,7 +388,8 @@
                     android:textAlignment="textStart"
                     android:textColor="@color/black"
                     android:textSize="18dp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:contentDescription="gesture"/>
 
                 <TextView
                     android:id="@+id/txtGestureValue"
@@ -405,7 +417,8 @@
                     android:textAlignment="textStart"
                     android:textColor="@color/black"
                     android:textSize="18dp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:contentDescription="error"/>
 
                 <TextView
                     android:id="@+id/txtErrorsValue"
@@ -452,7 +465,8 @@
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="18dp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:contentDescription="distance"/>
 
                 <TextView
                     android:id="@+id/txtHeadingThreshold"
@@ -463,7 +477,8 @@
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="18dp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:contentDescription="threshold"/>
             </LinearLayout>
 
             <LinearLayout

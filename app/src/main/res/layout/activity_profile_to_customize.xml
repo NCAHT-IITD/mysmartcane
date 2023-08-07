@@ -29,7 +29,7 @@
             android:layout_margin="10sp"
             android:text="PROFILES"
             android:textAlignment="center"
-
+            android:contentDescription="Profiles"
             android:textSize="20dp"
             android:textStyle="bold" />
 
@@ -50,6 +50,7 @@
             android:backgroundTint="#EBE2E2"
             android:text="Custom 1"
             android:textSize="18dp"
+            android:contentDescription="custom 1"
             android:textColor="@color/black"/>
     </androidx.cardview.widget.CardView>
 
@@ -70,7 +71,8 @@
             android:backgroundTint="#E8D5C9"
             android:text="Custom 2"
             android:textSize="18dp"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:contentDescription="custom 2"/>
     </androidx.cardview.widget.CardView>
 
 </LinearLayout>

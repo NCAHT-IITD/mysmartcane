@@ -18,7 +18,7 @@
         android:background="@drawable/ic_back_arrow"
         android:contentDescription="go back"
         android:onClick="goBackPressed"
-        android:textColor="#00000000" />
+        android:textColor="#000000" />
 
     <TextView
         android:id="@+id/idTVHeading"
@@ -33,7 +33,7 @@
         android:padding="4dp"
         android:text="REPORT GRIEVANCE"
         android:textAlignment="center"
-
+        android:contentDescription="report grievance"
         android:textSize="20dp" />
 
     <!-- on below line we are creating a spinner -->
@@ -43,9 +43,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_margin="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="40dp"
         android:padding="60dp"
-        />
+        android:contentDescription="select"/>
 
     <Button
         android:id="@+id/Submit"
@@ -57,7 +60,8 @@
         android:text="SUBMIT"
         android:textColor="@color/black"
         android:backgroundTint="#E8D5C9"
-        android:textSize="18dp"/>
+        android:textSize="18dp"
+        android:contentDescription="submit"/>
 
 
 </RelativeLayout>

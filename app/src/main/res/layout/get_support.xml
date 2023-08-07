@@ -29,7 +29,8 @@
             android:text="GET SUPPORT"
             android:textAlignment="center"
             android:textSize="20dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:contentDescription="get support"/>
 
         <androidx.cardview.widget.CardView
 
@@ -71,8 +72,7 @@
             android:text="REGISTER"
             android:textAlignment="center"
             android:textColor="@color/white"
-
-
+            android:contentDescription="register"
             android:textIsSelectable="false"
             android:textSize="18dp"
             />
@@ -120,6 +120,7 @@
             android:textColor="@color/white"
             android:textIsSelectable="false"
             android:textSize="18dp"
+            android:contentDescription="report issue"
             />
 
     </androidx.cardview.widget.CardView>

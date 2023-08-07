@@ -129,7 +129,7 @@ public class Location<MyApp> extends AppCompatActivity {
                             longitTextView.setText(location.getLongitude() + "");
                             Location.setText(cityName);
                             String finalCityName = cityName;
-                            tts = new TextToSpeech(Location.this, new TextToSpeech.OnInitListener() {
+                        /*    tts = new TextToSpeech(Location.this, new TextToSpeech.OnInitListener() {
                                 @Override
                                 public void onInit(int status) {
                                     // TODO Auto-generated method stub
@@ -154,7 +154,7 @@ public class Location<MyApp> extends AppCompatActivity {
 
                                     }
                                 }
-                            });
+                            });*/
 
                         /*    if (cityName == null){
                                 tts.speak("Could Not find location info", TextToSpeech.QUEUE_ADD, null);}
