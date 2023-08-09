@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:backgroundTint="@color/black">
     <TextView
         android:id="@+id/backButton"
         android:layout_width="wrap_content"
@@ -12,6 +14,14 @@
         android:background="@drawable/ic_back_arrow"
         android:contentDescription="go back"
         android:onClick="goBackPressed"
-        android:textColor="#00000000" />
+        android:textColor="#000000" />
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/webview"
+        android:background="@color/black"
+
+        />
+
 
 </LinearLayout>
