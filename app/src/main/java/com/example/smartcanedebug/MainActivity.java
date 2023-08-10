@@ -197,7 +197,7 @@ public class MainActivity extends AppCompatActivity {
 
         // call Login Activity
         Toast.makeText(getApplicationContext(), "You Clicked CardARTI8", Toast.LENGTH_LONG).show();
-        Intent intentTraining = new Intent(getBaseContext(), TrainingActivity.class);
+        Intent intentTraining = new Intent(getBaseContext(), Training.class);
 //                intentNA.putExtra("Type", NAV_TYPE_LOAD_ROUTE);
         startActivity(intentTraining);
     }

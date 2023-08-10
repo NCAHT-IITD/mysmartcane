@@ -103,6 +103,15 @@
         <activity
             android:name=".GetSupport"
             android:exported="false" />
+        <activity
+            android:name=".DiariesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Training"
+            android:exported="false" />
+        <activity
+            android:name=".Book"
+            android:exported="false" />
 
 
         <!-- register the service -->
