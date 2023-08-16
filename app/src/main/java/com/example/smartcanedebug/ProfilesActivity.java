@@ -32,6 +32,9 @@ public class ProfilesActivity extends AppCompatActivity{
         setContentView(R.layout.activity_profiles);
         initButtons();
     }
+    public void goBackPressed(View view) {
+        onBackPressed();
+    }
 
 //    @Override
 //    public void onBackPressed() {
@@ -109,7 +112,5 @@ public class ProfilesActivity extends AppCompatActivity{
             }
         });
     }
-    public void goBackPressed(View view) {
-        onBackPressed();
-    }
+
 }

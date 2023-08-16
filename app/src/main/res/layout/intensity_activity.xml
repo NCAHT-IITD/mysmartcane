@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="10sp">
 
     <TextView
         android:id="@+id/backButton"
@@ -36,7 +37,7 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="130dp"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_margin="50dp"
 
             android:padding="50dp"
@@ -54,14 +55,15 @@
                 android:text="VIBRATION"
                 android:textColor="@color/black"
                 android:textSize="18dp"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:layout_gravity="center"/>
 
         </androidx.cardview.widget.CardView>
 
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="horizontal"
             android:weightSum="2"
 
@@ -73,10 +75,10 @@
                 android:layout_height="44dp"
                 android:layout_marginTop="35dp"
                 android:background="@color/white"
+                android:contentDescription="Increase"
                 android:foreground="@drawable/img24"
                 android:onClick="count"
-                android:textSize="30sp"
-                android:contentDescription="Increase"/>
+                android:textSize="30sp" />
 
 
             <TextView
@@ -84,10 +86,10 @@
                 android:layout_width="40dp"
                 android:layout_height="match_parent"
                 android:layout_marginTop="35dp"
+                android:gravity="center"
                 android:text="5"
                 android:textColor="@android:color/white"
-                android:textSize="18dp"
-                android:gravity="center"/>
+                android:textSize="20dp" />
 
             <Button
                 android:id="@+id/bt2"
@@ -95,10 +97,10 @@
                 android:layout_height="44dp"
                 android:layout_marginTop="35dp"
                 android:background="@color/white"
+                android:contentDescription="decrease"
                 android:foreground="@drawable/img25"
                 android:onClick="count1"
-                android:textSize="30sp"
-                android:contentDescription="decrease"/>
+                android:textSize="30sp" />
         </LinearLayout>
     </LinearLayout>
 
@@ -109,7 +111,7 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="130dp"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_margin="50dp"
 
             android:padding="10dp"
@@ -127,14 +129,15 @@
                 android:text="BUZZER"
                 android:textColor="@color/black"
                 android:textSize="18dp"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:layout_gravity="center"/>
 
         </androidx.cardview.widget.CardView>
 
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
 
             android:orientation="horizontal"
             android:weightSum="2">
@@ -147,27 +150,26 @@
                 android:layout_height="44dp"
                 android:layout_marginTop="35dp"
                 android:background="@color/white"
+                android:contentDescription="increase"
                 android:foreground="@drawable/img24"
                 android:onClick="count3"
-                android:textSize="30sp"
-                android:contentDescription="increase"/>
+                android:textSize="30sp" />
             <!--creating a counter fab for incrementing a count-->
             <TextView
                 android:id="@+id/tx2"
                 android:layout_width="40dp"
                 android:layout_height="match_parent"
                 android:layout_marginTop="35dp"
+                android:gravity="center"
                 android:text="5"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@android:color/white"
-                android:textSize="18dp"
-                android:gravity="center"/>
+                android:textSize="20dp" />
 
             <Button
                 android:id="@+id/bt4"
                 android:layout_width="40dp"
-
-                android:layout_height="37dp"
+                android:layout_height="44dp"
                 android:layout_marginTop="35dp"
                 android:background="@color/white"
                 android:contentDescription="decrease"

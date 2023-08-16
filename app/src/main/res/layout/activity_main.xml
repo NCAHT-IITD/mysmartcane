@@ -145,7 +145,7 @@
                 android:scaleType="fitStart"
 
 
-                android:src="@drawable/img09" />
+                android:src="@drawable/img_8" />
 
             <TextView
                 android:layout_width="match_parent"

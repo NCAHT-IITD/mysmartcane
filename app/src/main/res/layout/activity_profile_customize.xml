@@ -4,10 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="10sp"
     android:orientation="vertical"
-    android:padding="10sp"
-    tools:context=".MainActivity">
+    android:padding="10sp">
+
     <TextView
         android:id="@+id/backButton"
         android:layout_width="wrap_content"
@@ -18,7 +17,7 @@
         android:background="@drawable/ic_back_arrow"
         android:contentDescription="go back"
         android:onClick="goBackPressed"
-        android:textColor="#00000000" />
+        android:textColor="#000000" />
 
 
     <TextView
@@ -554,18 +553,14 @@
                 android:layout_width="102dp"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
-
-
-                android:padding="@dimen/cardview_default_elevation"
+                android:padding="2dp"
                 app:cardBackgroundColor="#D0E8F1"
                 app:cardCornerRadius="20dp"
-
                 app:cardElevation="10dp">
-
 
                 <Button
                     android:id="@+id/btnSaveProfileSettings"
-                    android:layout_width="102dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:backgroundTint="#D0E8F1"
                     android:text="SAVE "
@@ -573,6 +568,7 @@
 
                     android:gravity="center"
                     android:contentDescription="save"/>
+
             </androidx.cardview.widget.CardView>
         </LinearLayout>
     </ScrollView>

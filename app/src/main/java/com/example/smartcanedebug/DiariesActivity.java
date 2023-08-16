@@ -13,7 +13,7 @@ import java.io.IOException;
 
 public class DiariesActivity extends AppCompatActivity {
 
-    private int mCounter = 0;
+    //private int mCounter = 0;
     Button btn;
     TextView txv;
     //private WebView webView;
