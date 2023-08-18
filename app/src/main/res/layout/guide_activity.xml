@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -17,30 +18,15 @@
         android:contentDescription="go back"
         android:onClick="goBackPressed"
         />
-    <androidx.cardview.widget.CardView
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="10dp"
-        android:padding="10dp"
-        app:cardBackgroundColor="#30302e"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="10dp"
-        android:layout_gravity="center">
 
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Please click back button to move to the Training Page"
-            android:textAlignment="center"
-            android:textSize="14dp"
-            android:layout_gravity="center"
-            android:textColor="@color/white"
-            android:contentDescription="Please click back button to move to the Training Page"/>
-    </androidx.cardview.widget.CardView>
-
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/webview"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp"
+        />
 
 
 </LinearLayout>

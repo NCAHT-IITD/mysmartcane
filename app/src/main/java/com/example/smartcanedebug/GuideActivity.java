@@ -30,12 +30,15 @@ public class GuideActivity extends AppCompatActivity {
         // Intent intentNavi = new Intent(new NavigationActivity(), getAssets().getClass());
 //                intentNA.putExtra("Type", NAV_TYPE_LOAD_ROUTE);
 
-            Intent intent1 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://smartcane.saksham.org/?page_id=33"));
-             Intent chooseIntent = Intent.createChooser(intent1, "Choose from below");
-            startActivity(chooseIntent);
+        WebView webview = findViewById(R.id.webview);
+        WebSettings webSettings = webview.getSettings();
+        webSettings.setBuiltInZoomControls(true);
+        webSettings.setJavaScriptEnabled(true);
+        webview.loadUrl("file:///android_asset/guide.html");
+
+    }
 
 
-        }
 
 
 
