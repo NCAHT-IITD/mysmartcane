@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
-    <title>W3.CSS Template</title>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -13,12 +13,19 @@
 body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 </style>
 </head>
-<body class="w3-content" style="max-width:1200px">
+<body class="w3-content" style="max-width:1200px" >
 
 <!-- Sidebar/menu -->
+
+
+<!-- Top menu on small screens -->
+<header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
+    <div class="w3-bar-item w3-padding-24 w3-wide w3-right">TRAINING GUIDE</div>
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-left" style="cursor:pointer" title="Menu"  onclick="w3_open()"><i class="fa fa-bars" ></i></a>
+</header>
 <nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3;width:250px" id="mySidebar">
     <div class="w3-container w3-display-container w3-padding-16">
-        <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
+        <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright" style="cursor:pointer" title="close side menu"></i>
         <h3 class="w3-wide"><b>TRAINING GUIDE</b></h3>
     </div>
     <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
@@ -39,12 +46,6 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
     </div>
 
 </nav>
-
-<!-- Top menu on small screens -->
-<header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
-    <div class="w3-bar-item w3-padding-24 w3-wide">TRAINING GUIDE</div>
-    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></a>
-</header>
 
 <!-- Overlay effect when opening sidebar on small screens -->
 <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
@@ -75,7 +76,8 @@ function w3_close() {
   document.getElementById("myOverlay").style.display = "none";
 }
 </script>
-    <div class="card0" id="intro">
+
+    <div class="card0" id="intro" >
         <h3>INTRODUCTION</h3>
 
         <a target="blank">
@@ -215,35 +217,34 @@ function w3_close() {
                 <p>In long range mode, the SmartCane device can detect obstacles within a distance of 3 meters in front of the user and this distance information is conveyed through 4 simple vibratory patterns. However, in short range mode, device can detect obstacles only within a distance of 1.8 meters from the user and this distance information is conveyed through 3 simple vibratory patterns. The relationship between the vibration patterns and the distance of the obstacle from the user is as follows: shorter the distance of detected obstacle/object from the user, faster the intensity of vibrations. In other words: closer the obstacle, faster the vibrations.</p>
 
 
-            <h3>Table below summarizes the vibration patterns and corresponding distances.</h3>
+            <h4>Table below summarizes the vibration patterns and corresponding distances.</h4>
 
             <table id="pattern">
                 <tr>
-                    <th>Vibration Pattern Type	 </th>
-                    <th>Pattern Number </th>
+                    <th>Vibration Pattern Type</th>
+                    <th>Pattern Number</th>
                     <th>Description</th>
                 </tr>
                 <tr>
-                    <td>Single vibration pulse repeated every second after a pause </td>
-                    <td> 1</td>
+                    <td>Single vibration pulse repeated every second after a pause</td>
+                    <td>   1</td>
                     <td>This pattern is present only in long range mode when object/ obstacle is within the distance of 2-3 meters (i.e. 6-7 footsteps away from the person walking with the SmartCane). This pattern is not present in short range mode because in that mode SmartCane obstacle detection range is limited to only 1.8 m)</td>
                 </tr>
                 <tr>
-                    <td>Two vibrations pulses with a small gap repeated every second after a pause  </td>
-                    <td> 2</td>
+                    <td>Two vibrations pulses with a small gap repeated every second after a pause</td>
+                    <td>   2</td>
                     <td>This pattern starts when an object / obstacle is within a distance of:
-                        1-2 meter for long range mode and1-1.8 meter for short range mode.(i.e. 4-5 footsteps away from the person walking with the SmartCane)
-                    </td>
+                        1-2 meter for long range mode and1-1.8 meter for short range mode.(i.e. 4-5 footsteps away from the person walking with the SmartCane)</td>
                 </tr>
                 <tr>
-                    <td>Fast repeating vibration pulses  </td>
-                    <td> 3</td>
+                    <td>Fast repeating vibration pulses</td>
+                    <td>   3</td>
                     <td>This pattern starts when an object / obstacle is within a distance of 0.5 -1 meter for both  long range as well as short range mode.
                         (i.e. 2-3 footsteps away from the person walking with the SmartCane</td>
                 </tr>
                 <tr>
                     <td>Very fast repeating vibration pulses</td>
-                    <td> 4	</td>
+                    <td>   4</td>
                     <td>This pattern starts when an object / obstacle is at a distance of less than 0.5 meter for both  long range as well as short range mode.
                         (i.e. 1-2 footsteps away from the person walking with the SmartCane)</td>
                 </tr>
@@ -549,7 +550,7 @@ function w3_close() {
 </div>
 
 <div class="footer">
-    <h2>Contact Us for More Details</h2>
+    <h5>Contact Us for More Details</h5>
 </div>
 
 </body>
