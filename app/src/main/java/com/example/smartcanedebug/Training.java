@@ -14,6 +14,7 @@ public class Training extends AppCompatActivity {
     private Button trainingGuide;
     private Button bookTraining;
     private Button smartcaneDiaries;
+    private Button trainingCourses;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +56,15 @@ public class Training extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent guide = new Intent(getBaseContext(),GuideActivity.class);
+
+                startActivity(guide);
+            }
+        });
+        this.trainingCourses = findViewById(R.id.trainingCourses);
+        this.trainingCourses.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent guide = new Intent(getBaseContext(),CoursesActivity.class);
 
                 startActivity(guide);
             }

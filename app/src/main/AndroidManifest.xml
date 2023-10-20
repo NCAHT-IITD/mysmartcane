@@ -115,6 +115,9 @@
         <activity
             android:name=".Book"
             android:exported="false" />
+        <activity
+            android:name=".CoursesActivity"
+            android:exported="false" />
 
 
         <!-- register the service -->
