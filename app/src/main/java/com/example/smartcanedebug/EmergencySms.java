@@ -51,12 +51,9 @@ public class EmergencySms extends AppCompatActivity {
         List<ContactModel> list = db.getAllContacts();
         CustomAdapter customAdapter = new CustomAdapter(this, list);
         customAdapter.addAll();
-       /* for (ContactModel c : list) {
-            String phone_number = c.getPhoneNo();
-            String Name =  c.getName();
-        Message.setText(Name+"\n"+phone_number);}*/
+
         sms.setAdapter(customAdapter);
-//Message.setText();
+
 
 
         // check for runtime permissions
@@ -89,26 +86,7 @@ public class EmergencySms extends AppCompatActivity {
         }
 
 
-        // button1 = findViewById(R.id.Button1);
-        //  listView = (ListView) findViewById(R.id.ListView);
-        // db = new DbHelper(this);
-        // list = db.getAllContacts();
-       /* customAdapter = new CustomAdapter(this, list);
-       // listView.setAdapter(customAdapter);
 
-        DbHelper finalDb = db;
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // calling of getContacts()
-                if (finalDb.count() != 5) {
-                    Intent intent = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
-                    startActivityForResult(intent, PICK_CONTACT);
-                } else {
-                    Toast.makeText(EmergencyMainActivity.this, "Can't Add more than 5 Contacts", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });*/
     }
 
     // method to check if the service is running
@@ -133,15 +111,6 @@ public class EmergencySms extends AppCompatActivity {
         super.onDestroy();
     }
 
-  /*  @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == 100) {
-            if (grantResults[0] == PackageManager.PERMISSION_DENIED) {
-                Toast.makeText(this, "Permissions Denied!\n Can't use the App!", Toast.LENGTH_SHORT).show();
-            }
-        }
-    }*/
 
     @SuppressLint("Range")
     @Override

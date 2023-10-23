@@ -53,9 +53,6 @@
             android:name=".DebugActivity"
             android:exported="false" />
         <activity
-            android:name=".NavigationActivity"
-            android:exported="false" />
-        <activity
             android:name=".TrainingActivity"
             android:exported="false" />
         <activity

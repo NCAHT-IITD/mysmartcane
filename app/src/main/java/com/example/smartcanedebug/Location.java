@@ -35,9 +35,7 @@ import java.util.Locale;
 public class Location<MyApp> extends AppCompatActivity {
 
     private static Context context;
-    // initializing
-    // FusedLocationProviderClient
-    // object
+
     FusedLocationProviderClient mFusedLocationClient;
     MyApp app;
     double currentLat, currentLong;
@@ -60,25 +58,7 @@ public class Location<MyApp> extends AppCompatActivity {
         Location = findViewById(R.id.TextLocation);
         app = (MyApp) this.getApplicationContext();
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
-      /*  tts = new TextToSpeech(NavigationActivity1.this, new TextToSpeech.OnInitListener() {
-            @Override
-            public void onInit(int status) {
-                // TODO Auto-generated method stub
-                if (status == TextToSpeech.SUCCESS) {
-//                    int result=tts.setLanguage(Locale.US);
-//                    if(result==TextToSpeech.LANG_MISSING_DATA ||
-//                            result==TextToSpeech.LANG_NOT_SUPPORTED){
-//                        Log.e("error", "This Language is not supported");
-//                    }
 
-                        tts.speak("Your Location", TextToSpeech.QUEUE_ADD, null);
-
-
-            }}
-        });*/
-
-
-        // method to get the location
         getLastLocation();
     }
 
@@ -91,10 +71,6 @@ public class Location<MyApp> extends AppCompatActivity {
             // check if location is enabled
             if (isLocationEnabled()) {
 
-                // getting last
-                // location from
-                // FusedLocationClient
-                // object
 
                 mFusedLocationClient.getLastLocation().addOnCompleteListener(new OnCompleteListener<android.location.Location>() {
 
@@ -112,15 +88,12 @@ public class Location<MyApp> extends AppCompatActivity {
                             if (addresses.size() > 0)
                                 System.out.println(addresses.get(0).getAddressLine(0) + addresses.get(0).getLocality() + addresses.get(0).getAdminArea());
                             cityName = addresses.get(0).getAddressLine(0);
-                            // latitudeTextView.setText(location.getLatitude() + "");
-                            // longitTextView.setText(location.getLongitude() + "");
-                            // Location.setText(cityName);
+
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
 
-                        //    String s =location.getLongitude()+location.getLatitude() +
-                        //        "My Currrent City is: "+ cityName;
+
                         if (location == null) {
                             requestNewLocationData();
                         } else {
@@ -129,43 +102,7 @@ public class Location<MyApp> extends AppCompatActivity {
                             longitTextView.setText(location.getLongitude() + "");
                             Location.setText(cityName);
                             String finalCityName = cityName;
-                        /*    tts = new TextToSpeech(Location.this, new TextToSpeech.OnInitListener() {
-                                @Override
-                                public void onInit(int status) {
-                                    // TODO Auto-generated method stub
-                                    if (status == TextToSpeech.SUCCESS) {
-//                    int result=tts.setLanguage(Locale.US);
-//                    if(result==TextToSpeech.LANG_MISSING_DATA ||
-//                            result==TextToSpeech.LANG_NOT_SUPPORTED){
-//                        Log.e("error", "This Language is not supported");
-//                    }
-                                        if (finalCityName == null) {
-                                            tts.speak("Could Not find location info", TextToSpeech.QUEUE_ADD, null);
-                                        } else {
 
-                                            // latitudeTextView.setText(location.getLatitude() + "");
-                                            //  longitTextView.setText(location.getLongitude() + "");
-                                            // Location.setText(cityName);
-                                            tts.speak("You are at " + finalCityName, TextToSpeech.QUEUE_ADD, null);
-
-                                        }
-                                        // tts.speak("Your Location", TextToSpeech.QUEUE_ADD, null);
-
-
-                                    }
-                                }
-                            });*/
-
-                        /*    if (cityName == null){
-                                tts.speak("Could Not find location info", TextToSpeech.QUEUE_ADD, null);}
-                            else {
-
-                               // latitudeTextView.setText(location.getLatitude() + "");
-                               //  longitTextView.setText(location.getLongitude() + "");
-                                // Location.setText(cityName);
-                                tts.speak("You are at " + cityName, TextToSpeech.QUEUE_ADD, null);
-
-                            }*/
                         }
                     }
 
@@ -205,9 +142,7 @@ public class Location<MyApp> extends AppCompatActivity {
         @Override
         public void onLocationResult(LocationResult locationResult) {
             android.location.Location mLastLocation = locationResult.getLastLocation();
-            //  latitudeTextView.setText("Latitude: " + mLastLocation.getLatitude() + "");
-            //longitTextView.setText("Longitude: " + mLastLocation.getLongitude() + "");
-            //  private EditText editLocation = null;
+
             String cityName = null;
             Geocoder gcd = new Geocoder(getBaseContext(),
                     Locale.getDefault());
@@ -226,50 +161,7 @@ public class Location<MyApp> extends AppCompatActivity {
 
             String s = mLastLocation.getLongitude() + mLastLocation.getLatitude() +
                     "My Currrent City is: " + cityName;
-            // Location.setText(s);
-            // longitTextView.setText("Address: " + cityName + "");
 
-              /*  Address obj = getAddress(mLastLocation.getLatitude(), mLastLocation.getLongitude());
-                String fin_add = getNameFromAddress(obj, 4);
-           // TextToSpeech tts = null;
-            if (fin_add == null)
-                    tts.speak("Could Not find location info", TextToSpeech.QUEUE_ADD, null);
-                else
-                    tts.speak("You are at " + fin_add, TextToSpeech.QUEUE_ADD, null);
-
-                System.out.println(fin_add);
-            }};
-            public String getNameFromAddress (Address obj,int ex){
-                String add = "";
-                String fin_add = "";
-                for (int i = 0; i <= obj.getMaxAddressLineIndex(); i++) {
-                    add = add + obj.getAddressLine(i);
-                    add = add + ", ";
-                }
-                int delimitCnt = 0;
-                for (int j = 0; j < add.length(); j++) {
-                    if (add.charAt(j) == ',')
-                        delimitCnt++;
-                    if (delimitCnt == ex)
-                        break;
-                    fin_add = fin_add + add.charAt(j);
-                }
-                return fin_add;
-            }
-
-            public Address getAddress ( double lat, double lng){
-                Geocoder geocoder = new Geocoder(this, Locale.getDefault());
-                Address obj = null;
-                try {
-                    List<Address> addresses = geocoder.getFromLocation(lat, lng, 1);
-                    obj = addresses.get(1);
-
-                } catch (IOException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                    Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
-                }
-                return obj;*/
         }
     };
 
@@ -363,40 +255,8 @@ public class Location<MyApp> extends AppCompatActivity {
                             e.printStackTrace();
                         }
 
-                        //    String s =location.getLongitude()+location.getLatitude() +
 
-
-
-                        /*    if (cityName == null){
-                                tts.speak("Could Not find location info", TextToSpeech.QUEUE_ADD, null);}
-                            else {
-
-                               // latitudeTextView.setText(location.getLatitude() + "");
-                               //  longitTextView.setText(location.getLongitude() + "");
-                                // Location.setText(cityName);
-                                tts.speak("You are at " + cityName, TextToSpeech.QUEUE_ADD, null);
-
-                            }*/
-
-
-                            // vibe.vibrate(200);
-    /*   Location mLastLocation = locationResult.getLastLocation();
-       //  latitudeTextView.setText("Latitude: " + mLastLocation.getLatitude() + "");
-       //longitTextView.setText("Longitude: " + mLastLocation.getLongitude() + "");
-       //  private EditText editLocation = null;
-       String cityName;
-       Geocoder gcd = new Geocoder(getBaseContext(),
-               Locale.getDefault());
-       List<Address>  addresses;
-       try {
-           addresses = gcd.getFromLocation(mLastLocation.getLatitude(), mLastLocation.getLongitude()
-                   , 6);
-           if (addresses.size() > 0)
-               System.out.println(addresses.get(0).getAddressLine(0)+addresses.get(0).getLocality()+addresses.get(0).getAdminArea());
-
-
-           cityName=addresses.get(0).getAddressLine(0);*/
-                            String shareBodyText;
+                        String shareBodyText;
 
                             shareBodyText = "Hi! I am " + " in " + cityName.toUpperCase();
 

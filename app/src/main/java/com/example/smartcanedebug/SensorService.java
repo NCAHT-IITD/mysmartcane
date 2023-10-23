@@ -36,47 +36,17 @@ import java.util.List;
 
 public class SensorService extends Service {
 
-    //  private SensorManager mSensorManager;
-    // private Sensor mAccelerometer;
-    //  private ShakeDetector mShakeDetector;
+
     Button button2;
     private String phoneNo;
     private static final String PHONENO = "PhoneNo";
-  /*  public SensorService() {
-    } private String contactName, contactNumber;
 
-    @Override
-    public IBinder onBind(Intent intent) {
-        // TODO: Return the communication channel to the service.
-        throw new UnsupportedOperationException("Not yet implemented");
-    }
-
-    @Override
-    public int onStartCommand(Intent intent, int flags, int startId) {
-        super.onStartCommand(intent, flags, startId);
-
-        return START_STICKY;
-    }*/
 
     @Override
     public void onCreate() {
 
         super.onCreate();
 
-        // start the foreground service
-
-        // start the foreground service
-        //   if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
-        //   startMyOwnForeground();
-        // else
-        //    startForeground(1, new Notification());
-
-        // ShakeDetector initialization
-        // mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
-        //  mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-        // mShakeDetector = new ShakeDetector();
-        //  mShakeDetector.setOnShakeListener(new ShakeDetector.OnShakeListener() {
-        // Button Button2 = findViewById(R.id.Button2);
 
         onsos();
 

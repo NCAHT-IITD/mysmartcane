@@ -1,4 +1,3 @@
-
 package com.example.smartcanedebug;
 
         import android.content.Context;
@@ -17,18 +16,11 @@ package com.example.smartcanedebug;
 
 public class GuideActivity extends AppCompatActivity {
 
-   // private int mCounter = 0;
-    //Button btn;
-   // TextView txv;
-    //private WebView webView;
-    //private String doc;
 
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.guide_activity);
-        // Intent intentNavi = new Intent(new NavigationActivity(), getAssets().getClass());
-//                intentNA.putExtra("Type", NAV_TYPE_LOAD_ROUTE);
 
         WebView webview = findViewById(R.id.webview);
         WebSettings webSettings = webview.getSettings();

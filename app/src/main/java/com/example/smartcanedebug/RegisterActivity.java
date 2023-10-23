@@ -90,59 +90,16 @@ public class RegisterActivity<Editor> extends AppCompatActivity {
 
 
 
-             /*   else
-                    {
-                        // if the input is not empty we are calling a method to save
-                        // data to shared prefs.
-                        saveMessage(msg);
-                       // new SaveSharedPreference();
-                   // report();
-                        //SaveSharedPreference1();
-
-
-                }*/
                                      }
         );
 
 
     }
 
-   /* private void saveMessage(String msg) {
-        SharedPreferences.Editor editor = sharedpreferences.edit();
-        // below lines will put values for
-        // message in shared preferences.
-        editor.putString(MESSAGE_KEY, msg);
-        // to save our data with key and value.
-        editor.apply();
-        // on below line we are displaying a toast message after adding data to shared prefs.
-        Toast.makeText(this, "Message saved to Shared Preferences", Toast.LENGTH_SHORT).show();
-        // after that we are setting our edit text to empty
-        //messageEdt0.setText("");
-        Toast.makeText(RegisterActivity.this, "User Registered successfully", Toast.LENGTH_SHORT).show();
-
-    }*/
 
 
 
-    /*public static class SaveSharedPreference<Editor> {
-        static final String PREF_USER_NAME = "name";
-        private Context ctx;
 
-        static SharedPreferences getSharedPreferences(Context ctx) {
-            return PreferenceManager.getDefaultSharedPreferences(ctx);
-        }
-
-        public static <Editor> void setUserName(Context ctx, String userName) {
-            Editor editor = (Editor) getSharedPreferences(ctx).edit();
-            ((SharedPreferences.Editor) editor).putString(PREF_USER_NAME, userName);
-            ((SharedPreferences.Editor) editor).commit();
-        }
-
-        public static String getUserName(Context ctx) {
-            return getSharedPreferences(ctx).getString(PREF_USER_NAME, "");
-        }
-    }
-*/
 
     public void goBackPressed(View view) {
         onBackPressed();

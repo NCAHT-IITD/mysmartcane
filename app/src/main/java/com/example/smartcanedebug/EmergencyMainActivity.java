@@ -51,34 +51,6 @@ public class EmergencyMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.emergencymain_activity);
 
-        // check for runtime permissions
-   /*     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_DENIED) {
-                requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.SEND_SMS, Manifest.permission.READ_CONTACTS}, 100);
-            }
-        }
-
-        // this is a special permission required only by devices using
-        // Android Q and above. The Access Background Permission is responsible
-        // for populating the dialog with "ALLOW ALL THE TIME" option
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-            requestPermissions(new String[]{Manifest.permission.ACCESS_BACKGROUND_LOCATION}, 100);
-        }
-
-        // check for BatteryOptimization,
-        PowerManager pm = (PowerManager) getSystemService(POWER_SERVICE);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (pm != null && !pm.isIgnoringBatteryOptimizations(getPackageName())) {
-                askIgnoreOptimization();
-            }
-        }
-
-        // start the service
-        SensorService sensorService = new SensorService();
-        Intent intent = new Intent(this, sensorService.getClass());
-        if (!isMyServiceRunning(sensorService.getClass())) {
-            startService(intent);
-        }*/
 
 
         button1 = findViewById(R.id.Button1);
@@ -103,18 +75,7 @@ public class EmergencyMainActivity extends AppCompatActivity {
         });
     }
 
-    // method to check if the service is running
-  /*  private boolean isMyServiceRunning(Class<?> serviceClass) {
-        ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
-        for (ActivityManager.RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE)) {
-            if (serviceClass.getName().equals(service.service.getClassName())) {
-                Log.i("Service status", "Running");
-                return true;
-            }
-        }
-        Log.i("Service status", "Not running");
-        return false;
-    }*/
+
 
     @Override
     protected void onDestroy() {

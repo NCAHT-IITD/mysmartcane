@@ -40,12 +40,7 @@ public class SettingsActivity extends AppCompatActivity {
         });
     }
 
-  /* @Override
-   public void onBackPressed() {
-        Intent intentMain = new Intent(this, MainActivity.class);
-        startActivity(intentMain);
-        finish();
-    }*/
+
   public void goBackPressed(View view) {
       onBackPressed();
   }

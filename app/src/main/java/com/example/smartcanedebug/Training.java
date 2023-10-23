@@ -24,12 +24,6 @@ public class Training extends AppCompatActivity {
         initButtons();
     }
 
-//    @Override
-//    public void onBackPressed() {
-//        Intent intentProfilesActivity = new Intent(this, ProfilesActivity.class);
-//        startActivity(intentProfilesActivity);
-//        finish();
-//    }
 
     private void initButtons() {
         this.bookTraining = findViewById(R.id.bookTraining);
