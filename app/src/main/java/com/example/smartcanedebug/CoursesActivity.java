@@ -1,16 +1,15 @@
 package com.example.smartcanedebug;
+
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.TextView;
-import android.content.Intent;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.io.IOException;
+
 
 public class CoursesActivity extends AppCompatActivity {
 
@@ -34,7 +33,7 @@ public class CoursesActivity extends AppCompatActivity {
         webview.loadUrl("file:///android_asset/guide.html");*/
 
         Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse("https://classroom.google.com/c/NjE5OTkwNjM5OTE3?cjc=rgj5mlt"));
+        intent.setData(Uri.parse("https://canvas.instructure.com/enroll/4NRYX6"));
         startActivity(intent);
 
     }

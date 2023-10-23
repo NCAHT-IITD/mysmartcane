@@ -1,10 +1,5 @@
 package com.example.smartcanedebug;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
@@ -14,13 +9,31 @@ import android.bluetooth.le.BluetoothLeScanner;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+
+
+import android.content.DialogInterface;
+import android.content.SharedPreferences;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.util.ArrayList;
+import java.util.Objects;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -41,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
     TextView textview1;
 
     private BluetoothLeScanner mBluetoothLeScanner;
-    CardView cd1, cd2, cd3, cd4, cd5, cd6, cd7, cd8, cd9, cd10;
+    CardView cd1, cd2, cd3, cd4, cd5, cd6, cd7, cd8, cd9, cd10,cd11;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,16 +62,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         toggleButton = findViewById(R.id.toggleButton);
         cd1 = (CardView) findViewById(R.id.cd1);
-        cd2 = (CardView) findViewById(R.id.cd2);
-        cd3 = (CardView) findViewById(R.id.cd3);
+
         cd4 = (CardView) findViewById(R.id.cd4);
-        cd5 = (CardView) findViewById(R.id.cd5);
-        cd6 = (CardView) findViewById(R.id.cd6);
-        cd7 = (CardView) findViewById(R.id.cd7);
-        cd8 = (CardView) findViewById(R.id.cd8);
-        cd9 = (CardView) findViewById(R.id.cd9);
-        cd10 = (CardView) findViewById(R.id.cd10);
-        
+
 
     /*    BluetoothManager bluetoothManager = getSystemService(BluetoothManager.class);
         BluetoothAdapter bluetoothAdapter = bluetoothManager.getAdapter();
@@ -75,17 +81,17 @@ public class MainActivity extends AppCompatActivity {
 
         this.bleController = BLEController.getInstance(this);
         this.common = Common.getInstance();
-       // getPermissionFromUser();
+        // getPermissionFromUser();
 
         // initButtons();
 
-     //   checkBLESupport();
-       // checkPermissions();
-     //   if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-         //   this.bleController.init();
-       // } else {
-      //    Log.d("ble init", "onCreate: ble controller not executed due to ACCESS_FINE_LOCATION permission");
-       //}
+        //   checkBLESupport();
+        // checkPermissions();
+        //   if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+        //   this.bleController.init();
+        // } else {
+        //    Log.d("ble init", "onCreate: ble controller not executed due to ACCESS_FINE_LOCATION permission");
+        //}
         // getPermissionFromUser();
            /* cd1.setOnClickListener(new View.OnCLickListener () {
             @Override
@@ -107,6 +113,89 @@ public class MainActivity extends AppCompatActivity {
             });
         }*/
 
+
+        BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation3);
+
+        // Set Home selected
+        bottomNavigationView.setSelectedItemId(R.id.home1);
+
+        // Perform item selected listener
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch(item.getItemId())
+                {
+                    case R.id.settings3:
+                        // startActivity(new Intent(getApplicationContext(),SearchPOI.class));
+                        overridePendingTransition(0,0);
+                        Toast.makeText(getApplicationContext(), "You Clicked Settings", Toast.LENGTH_LONG).show();
+                        Intent intentProfiles = new Intent(getBaseContext(), SettingsActivity.class);
+//                intentNA.putExtra("Type", NAV_TYPE_LOAD_ROUTE);
+                        startActivity(intentProfiles);
+                        return true;
+                    case R.id.home1:
+                        return true;
+                    case R.id.getsupport:
+                        overridePendingTransition(0,0);
+                        Toast.makeText(getApplicationContext(), "You Clicked Get Support", Toast.LENGTH_LONG).show();
+                        Intent intentRegister = new Intent(getBaseContext(), GetSupport.class);
+//                intentNA.putExtra("Type", NAV_TYPE_LOAD_ROUTE);
+                        startActivity(intentRegister);
+                        return true;
+                    case R.id.findmysmartcane:
+                        // startActivity(new Intent(getApplicationContext(),ShowRoutes.class));
+                        overridePendingTransition(0,0);
+                        Toast.makeText(getApplicationContext(), "You Clicked Find My SmartCane", Toast.LENGTH_LONG).show();
+
+                        // bleController.writeBLEData(bleController.otherInstructionsChar, common.OTHER_CMD_IDENTIFY_SMARTCANE);
+                        return true;
+
+                    case R.id.emergencysettings:
+
+                        overridePendingTransition(0,0);
+                        Toast.makeText(getApplicationContext(), "You Clicked Emergency Settings", Toast.LENGTH_LONG).show();
+                        Intent intentEmergency = new Intent(getBaseContext(), EmergencyMainActivity.class);
+//                intentNA.putExtra("Type", NAV_TYPE_LOAD_ROUTE);
+                        startActivity(intentEmergency);
+                        return true;
+
+                }
+                return false;
+            }
+        });
+
+        SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
+        boolean firstStart = prefs.getBoolean("firstStart", true);
+
+        if (firstStart) {
+            showStartDialog();
+
+        }
+
+
+    }
+    private void showStartDialog() {
+        new AlertDialog.Builder(this)
+                .setTitle("Essential Information!")
+                .setMessage("In order to use Emergency features,Please select contacts you want to connect to,during any sort of Emergency through Emergency Settings.")
+                .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                        Intent intentEmergency = new Intent(getBaseContext(), EmergencyMainActivity.class);
+//                intentNA.putExtra("Type", NAV_TYPE_LOAD_ROUTE);
+                        startActivity(intentEmergency);
+
+                    }
+                })
+                .create().show();
+
+
+        SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putBoolean("firstStart", false);
+        editor.apply();
     }
 
     public void onClick1(View view) {
@@ -230,7 +319,7 @@ public class MainActivity extends AppCompatActivity {
 ////        finish();
 //    }
 
-   final String[] PERMISSIONS = new String[]{Manifest.permission.BLUETOOTH_CONNECT, Manifest.permission.BLUETOOTH_ADVERTISE};
+    final String[] PERMISSIONS = new String[]{Manifest.permission.BLUETOOTH_CONNECT, Manifest.permission.BLUETOOTH_ADVERTISE};
 
     public void getPermissionFromUser() {
         if (BA == null) {
@@ -250,7 +339,7 @@ public class MainActivity extends AppCompatActivity {
                 final AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 builder.setTitle(title);
                 builder.setMessage(msg);
-               // builder.setNegativeButton("DENY", null);
+                // builder.setNegativeButton("DENY", null);
                 builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @SuppressLint("MissingPermission")
                     @Override
@@ -267,7 +356,7 @@ public class MainActivity extends AppCompatActivity {
                             Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
                             startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
                         }
-                } });
+                    } });
 
              /*   builder.setOnDismissListener(new DialogInterface.OnDismissListener() {
                     @Override
@@ -275,11 +364,11 @@ public class MainActivity extends AppCompatActivity {
                         requestPermissions(new String[]{PERMISSIONS[finalI]}, 3);
                     }
                 });*/
-                              builder.show();
-                            }
+                builder.show();
+            }
 
-                            i++;
-                        }}
+            i++;
+        }}
 
 
 
@@ -299,82 +388,82 @@ public class MainActivity extends AppCompatActivity {
         }
     }*/
 
-  /*  private void initButtons() {
-        this.connectButton = findViewById(R.id.btnConnect);
-        this.connectButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d("initButtons", "onClick: Connecting...");
-                bleController.connectToDevice(common.deviceAddress);
-            }
-        });
+    /*  private void initButtons() {
+          this.connectButton = findViewById(R.id.btnConnect);
+          this.connectButton.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View v) {
+                  Log.d("initButtons", "onClick: Connecting...");
+                  bleController.connectToDevice(common.deviceAddress);
+              }
+          });
 
-        this.disconnectButton = findViewById(R.id.btnDisconnect);
-        this.disconnectButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d("initButtons", "onClick: Disconnecting...");
-                bleController.disconnect();
-            }
-        });
+          this.disconnectButton = findViewById(R.id.btnDisconnect);
+          this.disconnectButton.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View v) {
+                  Log.d("initButtons", "onClick: Disconnecting...");
+                  bleController.disconnect();
+              }
+          });
 
-        //this.locateButton = findViewById(R.id.btnLocate);
-       // this.locateButton.setOnClickListener(new View.OnClickListener() {
-          //  @Override
-          //  public void onClick(View v) {
-                bleController.writeBLEData(bleController.otherInstructionsChar, common.OTHER_CMD_IDENTIFY_SMARTCANE);
-            }
-        });
+          //this.locateButton = findViewById(R.id.btnLocate);
+         // this.locateButton.setOnClickListener(new View.OnClickListener() {
+            //  @Override
+            //  public void onClick(View v) {
+                  bleController.writeBLEData(bleController.otherInstructionsChar, common.OTHER_CMD_IDENTIFY_SMARTCANE);
+              }
+          });
 
-        this.trainingButton = findViewById(R.id.btnTraining);
-        this.trainingButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intentNavigation = new Intent(getBaseContext(), NavigationActivity.class);
-//                intentNA.putExtra("Type", NAV_TYPE_LOAD_ROUTE);
-                startActivity(intentNavigation);
-            }
-        });
+          this.trainingButton = findViewById(R.id.btnTraining);
+          this.trainingButton.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View v) {
+                  Intent intentNavigation = new Intent(getBaseContext(), NavigationActivity.class);
+  //                intentNA.putExtra("Type", NAV_TYPE_LOAD_ROUTE);
+                  startActivity(intentNavigation);
+              }
+          });
 
-        this.navigationButton = findViewById(R.id.btnNavi);
-        this.navigationButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intentTraining = new Intent(getBaseContext(), TrainingActivity.class);
-//                intentNA.putExtra("Type", NAV_TYPE_LOAD_ROUTE);
-                startActivity(intentTraining);
-            }
-        });
+          this.navigationButton = findViewById(R.id.btnNavi);
+          this.navigationButton.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View v) {
+                  Intent intentTraining = new Intent(getBaseContext(), TrainingActivity.class);
+  //                intentNA.putExtra("Type", NAV_TYPE_LOAD_ROUTE);
+                  startActivity(intentTraining);
+              }
+          });
 
-        this.profilesButton = findViewById(R.id.btnProfiles);
-        this.profilesButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intentProfiles = new Intent(getBaseContext(), ProfilesActivity.class);
-//                intentNA.putExtra("Type", NAV_TYPE_LOAD_ROUTE);
-                startActivity(intentProfiles);
-            }
-        });
+          this.profilesButton = findViewById(R.id.btnProfiles);
+          this.profilesButton.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View v) {
+                  Intent intentProfiles = new Intent(getBaseContext(), ProfilesActivity.class);
+  //                intentNA.putExtra("Type", NAV_TYPE_LOAD_ROUTE);
+                  startActivity(intentProfiles);
+              }
+          });
 
-        this.debugButton = findViewById(R.id.btnDebug);
-        this.debugButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intentDebug = new Intent(getBaseContext(), DebugActivity.class);
-//                intentNA.putExtra("Type", NAV_TYPE_LOAD_ROUTE);
-                startActivity(intentDebug);
-            }
-        });
+          this.debugButton = findViewById(R.id.btnDebug);
+          this.debugButton.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View v) {
+                  Intent intentDebug = new Intent(getBaseContext(), DebugActivity.class);
+  //                intentNA.putExtra("Type", NAV_TYPE_LOAD_ROUTE);
+                  startActivity(intentDebug);
+              }
+          });
 
-//        connectButton.setEnabled(true);
-//        disconnectButton.setEnabled(false);
-//        locateButton.setEnabled(false);
-//        trainingButton.setEnabled(true);
-//        navigationButton.setEnabled(true);
-//        profilesButton.setEnabled(true);
-//        debugButton.setEnabled(false);
-    }
-*/
+  //        connectButton.setEnabled(true);
+  //        disconnectButton.setEnabled(false);
+  //        locateButton.setEnabled(false);
+  //        trainingButton.setEnabled(true);
+  //        navigationButton.setEnabled(true);
+  //        profilesButton.setEnabled(true);
+  //        debugButton.setEnabled(false);
+      }
+  */
     private void checkPermissions() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             Log.d("BLE", "checkPermissions: \"Access Fine Location\" permission not granted yet!");
