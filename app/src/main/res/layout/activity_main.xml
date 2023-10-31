@@ -358,6 +358,7 @@
         android:backgroundTint="@color/black">
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigation3"
+            app:itemIconSize="30dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/black"
